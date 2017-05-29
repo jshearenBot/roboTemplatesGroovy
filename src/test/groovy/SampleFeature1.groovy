@@ -11,12 +11,12 @@ class SampleFeature1 extends TestPlatform {
 
     @Test
     void clickSolutions(){
-        webDriver.findElement(By.cssSelector("a[href=\"https://momntfeed.com/solutions/\"]")).click()
+        webDriver.findElement(By.cssSelector("a[href=\"https://momentfeed.com/solutions/\"]")).click()
     }
 
     @Test
     void clickPartners(){
-        webDriver.findElement(By.cssSelector("a[href=\"https://momntfeed.com/partners/\"]")).click()
+        webDriver.findElement(By.cssSelector("a[href=\"https://momentfeed.com/partners/\"]")).click()
     }
 
     @Test
