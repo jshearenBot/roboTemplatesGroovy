@@ -13,5 +13,10 @@ abstract class TestPlatform {
     @BeforeMethod
     void setupWebBrowser(){
         webDriver = DriverFactory.get();
+        navigateToHomePage()
+    }
+
+    void navigateToHomePage(){
+        webDriver.navigate().to("https://momentfeed.com/")
     }
 }
