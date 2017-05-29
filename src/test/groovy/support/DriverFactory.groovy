@@ -33,7 +33,7 @@ class DriverFactory {
             capabilities = DesiredCapabilities.firefox()
         }
 
-        def url = System.getProperty("seleniumServerUrl")
+        def url = System.getProperty("seleniumServerUrl", "http://localhost:4444/wd/hub")
 
         if (!url) {
             throw new IllegalStateException("No 'seleniumServerUrl' system property set")
