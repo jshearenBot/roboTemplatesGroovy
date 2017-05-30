@@ -19,7 +19,7 @@ abstract class TestPlatform {
         webDriver = DriverFactory.getHeapWebDriver();
     }
 
-    void tearDownWebBrowswer(){
+    void quitWebDriver(){
         webDriver.quit()
     }
 
