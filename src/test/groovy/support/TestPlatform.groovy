@@ -1,7 +1,8 @@
 package support
 
 import org.openqa.selenium.WebDriver
-import org.testng.annotations.BeforeMethod
+import org.testng.annotations.AfterTest
+import org.testng.annotations.BeforeTest
 
 /**
  * Created by jshearen on 5/28/17.
@@ -10,8 +11,16 @@ import org.testng.annotations.BeforeMethod
 abstract class TestPlatform {
     WebDriver webDriver
 
-    @BeforeMethod
-    void setupWebBrowser(){
-        webDriver = DriverFactory.get();
+    void createStackWebDriver(){
+        webDriver = DriverFactory.createStackWebDriver();
     }
+
+    void getHeapWebDriver(){
+        webDriver = DriverFactory.getHeapWebDriver();
+    }
+
+    void tearDownWebBrowswer(){
+        webDriver.quit()
+    }
+
 }

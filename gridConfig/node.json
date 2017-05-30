@@ -14,7 +14,10 @@
       {
         "browserName": "phantomjs",
         "maxInstances": 10,
-        "seleniumProtocol": "WebDriver"
+        "seleniumProtocol": "WebDriver",
+        "javascriptEnabled" : true,
+        "acceptSslCerts" : true,
+        "phantomjs.binary.path" : "/usr/local/Cellar/phantomjs/2.1.1/bin/phantomjs"
       }
     ],
     "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
