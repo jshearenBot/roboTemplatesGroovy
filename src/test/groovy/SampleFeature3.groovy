@@ -12,12 +12,12 @@ class SampleFeature3 extends TestPlatform{
     @BeforeMethod
     void getHeapWebDriver(){
         super.createStackWebDriver();
-        webDriver.navigate().to("https://momentfeed.com/")
+        webDriver.navigate().to("https://momentfeed.com/partners/mobile-networks/")
     }
 
     @AfterMethod
-    void closeWebDriver(){
-        webDriver.close()
+    void quitWebDriver(){
+        super.quitWebDriver()
     }
 
     @Test

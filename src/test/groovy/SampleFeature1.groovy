@@ -11,7 +11,7 @@ class SampleFeature1 extends TestPlatform {
     @BeforeMethod(groups ="sanity")
     void getHeapWebDriver(){
         super.getHeapWebDriver();
-        webDriver.navigate().to("https://momentfeed.com/")
+        webDriver.navigate().to("https://momentfeed.com/products/mobile-customer-experience-platform/")
     }
 
     @Test(groups = "sanity")

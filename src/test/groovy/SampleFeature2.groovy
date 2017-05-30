@@ -17,8 +17,8 @@ class SampleFeature2 extends TestPlatform {
     }
 
     @AfterTest
-    void closeWebDriver(){
-        webDriver.close()
+    void quitWebDriver(){
+        super.quitWebDriver()
     }
 
     @Test
