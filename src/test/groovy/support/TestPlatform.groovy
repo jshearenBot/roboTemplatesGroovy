@@ -22,5 +22,4 @@ abstract class TestPlatform {
     void quitWebDriver(){
         webDriver.quit()
     }
-
 }
