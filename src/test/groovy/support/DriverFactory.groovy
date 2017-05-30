@@ -30,13 +30,16 @@ class DriverFactory {
     }
 
     private static WebDriver createWebDriver() {
-        String property = System.getProperty("driver", "firefox")
+        String property = System.getProperty("driver", "chrome")
         def capabilities
+
         if (property == "chrome") {
             capabilities = DesiredCapabilities.chrome()
+
         } else if (property == "firefox") {
             System.setProperty("webdriver.gecko.driver", "/usr/local/Cellar/geckodriver/0.16.1/bin/geckodriver")
             capabilities = DesiredCapabilities.firefox()
+
         } else if (property == "phantomjs"){
             def cliArgsCap = new ArrayList<String>()
             cliArgsCap.add("--web-security=false")

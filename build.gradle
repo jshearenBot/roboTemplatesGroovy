@@ -36,6 +36,20 @@ test {
     }
 }
 
+task phantomSanityCheck(type:Test){
+    useTestNG{includeGroups "sanity"}
+    testClassesDir = test.testClassesDir
+    classpath = test.classpath
+    reports {
+        html.destination = reporting.file("$name/html")
+        junitXml.destination = file("$buildDir/test-results/$name")
+    }
+    systemProperty "driver", "phantomjs"
+    systemProperty "seleniumServerUrl", "http://localhost:4444/wd/hub"
+    maxParallelForks 3
+    jvmArgs "-Xmx64m"
+}
+
 task wrapper(type: Wrapper) {
     gradleVersion = '3.5'
 }
