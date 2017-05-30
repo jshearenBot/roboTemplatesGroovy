@@ -8,7 +8,7 @@ import support.TestPlatform
 /**
  * Created by jshearen on 5/29/17.
  */
-class SampleFeature2 extends TestPlatform {
+class SampleScenario2 extends TestPlatform {
 
     @BeforeTest
     void getHeapWebDriver(){
