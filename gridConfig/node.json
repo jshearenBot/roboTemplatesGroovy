@@ -3,17 +3,17 @@
     [
       {
         "browserName": "chrome",
-        "maxInstances": 10,
+        "maxInstances": 7,
         "seleniumProtocol": "WebDriver"
       },
       {
         "browserName": "firefox",
-        "maxInstances": 10,
+        "maxInstances": 7,
         "seleniumProtocol": "WebDriver"
       },
       {
         "browserName": "phantomjs",
-        "maxInstances": 10,
+        "maxInstances": 7,
         "seleniumProtocol": "WebDriver",
         "javascriptEnabled" : true,
         "acceptSslCerts" : true,
@@ -21,7 +21,7 @@
       }
     ],
     "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
-    "maxSession": 5,
+    "maxSession": 7,
     "port": 5555,
     "register": true,
     "registerCycle": 5000,
