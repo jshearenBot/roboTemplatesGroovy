@@ -1,4 +1,6 @@
 import org.openqa.selenium.By
+import org.testng.annotations.AfterMethod
+import org.testng.annotations.BeforeMethod
 import org.testng.annotations.Test
 import support.TestPlatform
 
@@ -6,6 +8,17 @@ import support.TestPlatform
  * Created by jshearen on 5/29/17.
  */
 class SampleFeature3 extends TestPlatform{
+
+    @BeforeMethod
+    void getHeapWebDriver(){
+        super.createStackWebDriver();
+        webDriver.navigate().to("https://momentfeed.com/")
+    }
+
+    @AfterMethod
+    void closeWebDriver(){
+        webDriver.close()
+    }
 
     @Test
     void clickSolutions(){
@@ -21,5 +34,4 @@ class SampleFeature3 extends TestPlatform{
     void clickProducts(){
         webDriver.findElement(By.cssSelector("a[href=\"https://momentfeed.com/products/mobile-customer-experience-platform/\"]")).click()
     }
-
 }
