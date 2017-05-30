@@ -3,13 +3,17 @@
     [
       {
         "browserName": "chrome",
-        "maxInstances": 5,
+        "maxInstances": 10,
         "seleniumProtocol": "WebDriver"
       },
-
       {
         "browserName": "firefox",
-        "maxInstances": 5,
+        "maxInstances": 10,
+        "seleniumProtocol": "WebDriver"
+      },
+      {
+        "browserName": "phantomjs",
+        "maxInstances": 10,
         "seleniumProtocol": "WebDriver"
       }
     ],
