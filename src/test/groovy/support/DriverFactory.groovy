@@ -5,20 +5,12 @@ import org.openqa.selenium.phantomjs.PhantomJSDriverService
 import org.openqa.selenium.remote.DesiredCapabilities
 import org.openqa.selenium.remote.RemoteWebDriver
 
+import java.util.concurrent.TimeUnit
+
 /**
  * Created by jshearen on 5/28/17.
  */
 class DriverFactory {
-
-    private static final ThreadLocal<WebDriver> HEAP_WEB_DRIVER = new ThreadLocal<WebDriver>() {
-        protected WebDriver initialValue() {
-            createWebDriver()
-        }
-    }
-
-    static WebDriver getHeapWebDriver() {
-        HEAP_WEB_DRIVER.get()
-    }
 
     static final WebDriver createStackWebDriver(){
         ThreadLocal<WebDriver> webDriver = new ThreadLocal<WebDriver>(){
@@ -27,6 +19,10 @@ class DriverFactory {
             }
         }
         webDriver.get()
+    }
+
+    static WebDriver getStackWebDriver(){
+        stackWebDriver.get()
     }
 
     private static WebDriver createWebDriver() {
@@ -57,7 +53,7 @@ class DriverFactory {
         }
 
         def webDriver = new RemoteWebDriver(new URL(url), capabilities)
-
+        webDriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS)
         Runtime.addShutdownHook {
             try {
                 webDriver.quit()

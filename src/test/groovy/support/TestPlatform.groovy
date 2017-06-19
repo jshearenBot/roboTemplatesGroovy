@@ -11,12 +11,12 @@ import org.testng.annotations.BeforeTest
 abstract class TestPlatform {
     WebDriver webDriver
 
-    void createStackWebDriver(){
-        webDriver = DriverFactory.createStackWebDriver();
+    void startUpWebBrowser(){
+        webDriver = DriverFactory.createStackWebDriver()
     }
 
-    void getHeapWebDriver(){
-        webDriver = DriverFactory.getHeapWebDriver();
+    void getStaticWebBrowser(){
+        webDriver = DriverFactory.getHeapWebDriver()
     }
 
     void quitWebDriver(){
